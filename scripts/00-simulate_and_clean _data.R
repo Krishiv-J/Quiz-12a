@@ -22,8 +22,14 @@ simulated_data <-
   Average_Income = runif(105, min = 70000, max = 150000),
   Average_Alcohol_Consumption = runif(105, min = 0, max = 100))
 
-### TESTS ###
+simulated_data |>
+  ggplot(mapping = aes(x = Year, fill = hospital_names)) +
+  geom_bar() +
+  labs(x = "Age group", y = "Number of observations", fill = "Vote") +
+  theme(legend.position = "bottom")
 
+
+### TESTS ###
 
 ##Check the minimum number is equal, or greater than, 0 ##
 #Based on: https://tellingstorieswithdata.com/02-drinking_from_a_fire_hose.html#simulate
